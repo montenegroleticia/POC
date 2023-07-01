@@ -1,13 +1,19 @@
-import { Workout } from "Protocols";
+import { CreateWorkout, Workout } from "Protocols";
+import connection from "../Database";
 
-export function createWorkout(workout: Workout){
+export async function createWorkout(workout: CreateWorkout){
+    return await connection.query<CreateWorkout>(`INSERT INTO workouts (type, name, description) VALUES ($1, $2, $3)`, [workout.type, workout.name, workout.description]);
 }
 
-export function getWorkout(){
+export async function getWorkout(){
+    const result = await connection.query(`SELECT * FROM workouts`)
+    return result.rows;
 }
 
-export function putWorkout(){
+export async function putWorkout(workout: Workout){
+    return await connection.query<Workout>(`UPDATE workouts SET type=$1, name=$2, description=$3 WHERE id = $4`, [workout.type, workout.name, workout.description, workout.id])
 }
 
-export function deleteWorkout(){
+export async function deleteWorkout(id: number){
+    return await connection.query(`DELETE FROM workouts WHERE id = $1`, [id])
 }

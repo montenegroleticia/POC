@@ -1,29 +1,35 @@
 import { Request, Response } from "express";
 import * as workoutService from "../Services/workout-service";
-import { Workout } from "Protocols";
+import { CreateWorkout, Workout } from "Protocols";
 import httpStatus from "http-status";
 
-export function createWorkout(req: Request, res: Response) {
-  const workout = req.body as Workout;
-  workoutService.createWorkout(workout);
+export async function createWorkout(req: Request, res: Response) {
+  const workout = req.body as CreateWorkout;
 
-  res.sendStatus(httpStatus.CREATED);
+  await workoutService.createWorkout(workout);
+
+  res.status(httpStatus.CREATED).send("Workout created");
 }
 
-export function getWorkout(req: Request, res: Response) {
-  const workout = workoutService.getWorkout();
+export async function getWorkout(req: Request, res: Response) {
+  const workout = (await workoutService.getWorkout()) as Workout[];
 
-  res.send(workout).status(httpStatus.OK);
+  res.status(httpStatus.OK).send(workout);
 }
 
-export function putWorkout(req: Request, res: Response) {
-  workoutService.putWorkout();
+export async function putWorkout(req: Request, res: Response) {
+  const workoutId: number = parseInt(req.params.id, 10);
+  const updatedWorkout = req.body as Workout;
 
-  res.sendStatus(httpStatus.OK);
+  await workoutService.putWorkout(workoutId, updatedWorkout);
+
+  res.status(httpStatus.OK).send("Updated workout");
 }
 
-export function deleteWorkout(req: Request, res: Response) {
-  workoutService.deleteWorkout();
+export async function deleteWorkout(req: Request, res: Response) {
+  const workoutId: number = parseInt(req.params.id, 10);
 
-  res.sendStatus(httpStatus.NO_CONTENT);
+  await workoutService.deleteWorkout(workoutId);
+
+  res.status(httpStatus.NO_CONTENT).send("Deleted workout");
 }

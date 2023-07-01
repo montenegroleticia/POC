@@ -1,18 +1,19 @@
-import { Workout } from "Protocols";
+import { CreateWorkout, Workout } from "Protocols";
 import * as workoutRepository from "../Repositories/workout-repository";
 
-export function createWorkout(workout: Workout) {
-  return workoutRepository.createWorkout(workout);
+export async function createWorkout(workout: CreateWorkout) {
+  return await workoutRepository.createWorkout(workout);
 }
 
-export function getWorkout() {
-  return workoutRepository.getWorkout();
+export async function getWorkout() {
+  return await workoutRepository.getWorkout();
 }
 
-export function putWorkout() {
-  return workoutRepository.putWorkout();
+export async function putWorkout(workoutId: number, updatedWorkout: Workout) {
+  updatedWorkout.id = workoutId;
+  return await workoutRepository.putWorkout(updatedWorkout);
 }
 
-export function deleteWorkout() {
-  return workoutRepository.deleteWorkout();
+export async function deleteWorkout(id: number) {
+  return await workoutRepository.deleteWorkout(id);
 }

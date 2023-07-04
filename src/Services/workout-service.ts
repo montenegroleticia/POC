@@ -9,6 +9,10 @@ export async function getWorkout() {
   return await workoutRepository.getWorkout();
 }
 
+export async function getWorkoutById(id: number) {
+  return await workoutRepository.getWorkoutById(id);
+}
+
 export async function putWorkout(workoutId: number, updatedWorkout: Workout) {
   updatedWorkout.id = workoutId;
   return await workoutRepository.putWorkout(updatedWorkout);

@@ -4,7 +4,7 @@ The API is a library of gym training exercises with name, type, and description.
 
 Designed to be a POC (Proof of Concept), this is a functional API made with Node.js to showcase TypeScript concepts with Express and SQL, developing integrated CRUD operations like POST, GET, PUT, and DELETE routers.
 
-##### API Documentation
+#### API Documentation
 
 ###### POST /workouts
 
@@ -72,6 +72,26 @@ Content-Type: application/json
       },
       ...
     ]
+
+###### GET by id /workouts:id
+
+Get one training exercise.
+
+**URL:** `https://workout-api-fwhw.onrender.com/workouts/:id`
+
+**Method:** GET
+
+**Response Example:**
+
+GET /workouts/1
+Content-Type: application/json
+
+    {
+      "id": 1,
+      "name": "Squat",
+      "type": "Legs",
+      "description": "Exercise for strengthening leg muscles."
+    }
 
 ### PUT /workouts/:id
 

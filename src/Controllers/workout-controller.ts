@@ -24,6 +24,18 @@ export async function getWorkout(req: Request, res: Response) {
   }
 }
 
+export async function getWorkoutById(req: Request, res: Response) {
+  const id: number = parseInt(req.params.id, 10);
+
+  try {
+    const workout = (await workoutService.getWorkoutById(id)) as Workout[];
+
+    res.status(httpStatus.OK).send(workout);
+  } catch (error) {
+    return res.sendStatus(httpStatus.BAD_REQUEST);
+  }
+}
+
 export async function putWorkout(req: Request, res: Response) {
   const workoutId: number = parseInt(req.params.id, 10);
   const updatedWorkout = req.body as Workout;

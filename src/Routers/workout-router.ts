@@ -11,6 +11,7 @@ workoutRouter.post(
   workoutController.createWorkout
 );
 workoutRouter.get("/workouts", workoutController.getWorkout);
+workoutRouter.get("/workouts/:id", workoutController.getWorkoutById);
 workoutRouter.put(
   "/workouts/:id",
   validateSchemaMiddleware(workoutSchema),

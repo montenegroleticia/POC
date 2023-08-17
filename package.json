@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "npm run migration:prod && npm run seed && node dist/index.js",
     "dev": "nodemon src/index.ts",
     "seed": "prisma db seed",
+    "migration:prod": "prisma migrate deploy",
     "migrate:dev": "prisma migrate dev"
   },
   "keywords": [],

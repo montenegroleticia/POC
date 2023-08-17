@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=16.13"
+  },
   "scripts": {
     "build": "tsc",
     "start": "npm run migration:prod && npm run seed && node dist/index.js",

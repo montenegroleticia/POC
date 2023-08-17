@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run migration:prod && npm run seed && node src/index.js",
+    "start": "npm run migration:prod && npm run seed && node dist/index.js",
     "dev": "nodemon src/index.ts",
     "seed": "prisma db seed",
     "migration:prod": "prisma migrate deploy",

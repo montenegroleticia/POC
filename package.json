@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "seed": "prisma db seed",
+    "migrate:dev": "prisma migrate dev"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +30,8 @@
     "http-status-ts": "^2.0.0",
     "joi": "^17.9.2",
     "pg": "^8.11.1"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }

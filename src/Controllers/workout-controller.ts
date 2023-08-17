@@ -28,7 +28,7 @@ export async function getWorkoutById(req: Request, res: Response) {
   const id: number = parseInt(req.params.id, 10);
 
   try {
-    const workout = (await workoutService.getWorkoutById(id)) as Workout[];
+    const workout = await workoutService.getWorkoutById(id);
 
     res.status(httpStatus.OK).send(workout);
   } catch (error) {

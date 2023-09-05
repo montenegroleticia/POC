@@ -4,6 +4,10 @@ The API is a library of gym training exercises with name, type, and description.
 
 Designed to be a POC (Proof of Concept), this is a functional API made with Node.js to showcase TypeScript concepts with Express and SQL, developing integrated CRUD operations like POST, GET, PUT, and DELETE routers.
 
+#### Technologies Used
+
+<img align = "center" alt = "Node.js" src = "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white "/><img align = "center" alt = "typescript" src = "https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" /><img align = "center" alt = "Express.js" src = "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/><img align = "center" alt = "PostgreSQL" src = "https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img align = "center" alt = "Prisma" src = "https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"/>
+
 #### API Documentation
 
 ###### POST /workouts

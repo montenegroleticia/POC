@@ -14,7 +14,7 @@ Designed to be a POC (Proof of Concept), this is a functional API made with Node
 
 Create a new training exercise.
 
-**URL:** `https://workout-api-fwhw.onrender.com/workouts`
+**URL:** `https://workout-api-t8nm.onrender.com/workouts`
 
 **Method:** POST
 
@@ -52,7 +52,7 @@ Content-Type: application/json
 
 Get the list of all training exercises.
 
-**URL:** `https://workout-api-fwhw.onrender.com/workouts`
+**URL:** `https://workout-api-t8nm.onrender.com/workouts`
 
 **Method:** GET
 
@@ -81,7 +81,7 @@ Content-Type: application/json
 
 Get one training exercise.
 
-**URL:** `https://workout-api-fwhw.onrender.com/workouts/:id`
+**URL:** `https://workout-api-t8nm.onrender.com/workouts/:id`
 
 **Method:** GET
 
@@ -101,7 +101,7 @@ Content-Type: application/json
 
 Update an existing training exercise.
 
-**URL:** `https://workout-api-fwhw.onrender.com/workouts/:id`
+**URL:** `https://workout-api-t8nm.onrender.com/workouts/:id`
 
 **Method:** PUT
 
@@ -141,7 +141,7 @@ Content-Type: application/json
 
 Delete a training exercise.
 
-**URL:** `https://workout-api-fwhw.onrender.com/workouts/:id`
+**URL:** `https://workout-api-t8nm.onrender.com/workouts/:id`
 
 **Method:** DELETE
 

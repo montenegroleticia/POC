@@ -158,3 +158,40 @@ DELETE /workouts/1
 **Response Example:**
 
 Status: 204 No Content
+
+How to run
+
+1. Clone this repository:
+```bash
+    https://github.com/montenegroleticia/Workout-api.git
+```
+2. Install dependencies:
+```bash
+npm i
+```
+3. Run Prisma:
+```bash
+npm i -D prisma
+npx prisma init
+```
+4. Adjust .env
+5. Generate the model through the bank:
+```bash
+npx prisma db pull
+```
+6. Create the migration and manage the Prisma Client:
+```bash
+npx prisma migrate dev
+```
+7. Create Seed:
+```bash
+npm run seed
+```
+8. Run the API with:
+```bash
+npm run dev
+```
+9. Finally, access it in your preferred browser or use Thunder Client or similar:
+```bash
+http://localhost:5000
+```

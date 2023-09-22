@@ -159,7 +159,7 @@ DELETE /workouts/1
 
 Status: 204 No Content
 
-How to run
+#### How to run
 
 1. Clone this repository:
 ```bash
